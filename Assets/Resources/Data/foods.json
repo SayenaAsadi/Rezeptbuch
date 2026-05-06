@@ -1,0 +1,36 @@
+{
+  "foods": [
+    {
+      "id": "9001234567890",
+      "name": "Quark Creme",
+      "proteinPerPortion": 18,
+      "kcalPerPortion": 140,
+      "allergens": "Milch",
+      "feedback": "Gut kombinierbar mit Obst oder Haferflocken."
+    },
+    {
+      "id": "4250519677033",
+      "name": "ESN Protein Riegel",
+      "proteinPerPortion": 14,
+      "kcalPerPortion": 193,
+      "allergens": "Milch, Gluten, Erdnüsse, Ei",
+      "feedback": "Sättigt schnell bei einem Craving nach Süßigkeiten."
+    },
+    {
+      "id": "8004560987453",
+      "name": "Mozzarella",
+      "proteinPerPortion": 18,
+      "kcalPerPortion": 250,
+      "allergens": "Milch",
+      "feedback": "Passt gut zu Tomaten oder Brot."
+    },
+    {
+      "id": "7612349087231",
+      "name": "Thunfisch",
+      "proteinPerPortion": 36,
+      "kcalPerPortion": 180,
+      "allergens": "Fisch",
+      "feedback": "Sehr proteinreich – gut kombinierbar mit Salat oder Brot."
+    }
+  ]
+}
