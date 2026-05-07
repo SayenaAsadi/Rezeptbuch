@@ -1,3 +1,5 @@
+// Steuert Szenenwechsel zwischen MainMenu und BarcodeScannerScene.
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

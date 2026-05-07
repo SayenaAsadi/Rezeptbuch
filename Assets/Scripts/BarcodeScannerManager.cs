@@ -1,3 +1,5 @@
+// Steuert Kamera-Barcode-Scan, prüft erkannte EAN-13 Codes und löst UI-Panels aus.
+
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -5,6 +7,7 @@ using ZXing;
 using ZXing.Common;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Android;
 
 public class BarcodeScannerManager : MonoBehaviour
 {
@@ -17,6 +20,12 @@ public class BarcodeScannerManager : MonoBehaviour
     void Start()
     {
         resultText.text = "";
+
+        if (!Permission.HasUserAuthorizedPermission(Permission.Camera))
+        {
+            Permission.RequestUserPermission(Permission.Camera);
+        }
+
         StartCamera();
     }
 
@@ -94,6 +103,8 @@ public class BarcodeScannerManager : MonoBehaviour
                         else
                         {
                             Debug.Log("Barcode nicht in foods.json: " + barcode);
+                            resultText.text = "Produkt nicht erkannt:\n" + barcode;
+                            StartCoroutine(ClearResultTextAfterDelay(3f));
                         }
                     }
                 }
@@ -102,4 +113,11 @@ public class BarcodeScannerManager : MonoBehaviour
             yield return new WaitForSeconds(0.4f);
         }
     }
+
+    private IEnumerator ClearResultTextAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        resultText.text = "";
+    }
+
 }

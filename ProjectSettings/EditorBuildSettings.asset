@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/BarcodeScannerScene.unity
-    guid: 1f33cda2eb5b84a4fb7778ae7dde1ed7
-  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 957cb91d4fb1942fdb01d06bb29a9e98
+  - enabled: 1
+    path: Assets/Scenes/BarcodeScannerScene.unity
+    guid: 1f33cda2eb5b84a4fb7778ae7dde1ed7
   m_configObjects: {}

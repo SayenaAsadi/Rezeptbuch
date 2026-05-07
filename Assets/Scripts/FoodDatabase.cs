@@ -1,3 +1,5 @@
+// Lädt Lebensmitteldaten aus foods.json und stellt sie über Barcode-IDs bereit.
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,15 +65,18 @@ public class FoodDatabase : MonoBehaviour
 
         Debug.Log("Foods geladen: " + list.foods.Count);
 
-        foodMap = list.foods.ToDictionary(f => f.id, f => f);
+        foodMap = list.foods.ToDictionary(f => f.id.Trim(), f => f);
 
         Debug.Log("Food IDs geladen: " + string.Join(", ", foodMap.Keys));
     }
 
     public FoodItem GetFoodById(string id)
     {
+        id = id.Trim();
+
         if (foodMap.TryGetValue(id, out FoodItem item))
             return item;
+
         return null;
     }
 }
